@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+
+ 
+    <input type="number" id="g1"/>
+    <input type="number" id="g2" value="0"/>
+    <input type="button" value="+" onclick="dodaj(g1.value, g2.value)"/>
+    <input type="button" value="-" onclick="usun(g1.value, g2.value)"/>
+    <input type="button" value="x" onclick="razy(g1.value, g2.value)"/>
+    <input type="button" value="/" onclick="dziel(g1.value, g2.value)"/>
+  <script>
+    function dodaj(a,b) {
+g2.value=parseFloat(a)+parseFloat(b);
+}
+function usun(a,b) {
+g2.value=parseFloat(b)-parseFloat(a);
+}
+function razy(a,b) {
+g2.value=parseFloat(a)*parseFloat(b);
+}
+function dziel(a,b) {
+    if(a==0){alert("nie mozna dzielic przez 0!")} else{
+g2.value=parseFloat(b)/parseFloat(a);}
+}
+    
+    </script>
+</body>
+
+
+</html>
