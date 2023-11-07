@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+
+ 
+    <input type="text" id="g1"/>
+    
+    <input type="button" value="wyslij" onclick="cosiek(g1.value)"/>
+  
+  <script>
+    function cosiek(a,b) {
+      kk=1;
+for(i=0; i<a.length; i++){ 
+  if(a.charAt(a.length-1-i)!=a.charAt(i)){kk=0;}
+} 
+if(kk==1){alert("tak")} else {alert("nie")}
+}
+    
+ </script>
+</body>
+
+
+</html>

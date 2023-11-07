@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+
+ 
+   ile elementow w tablicy? <input type="text" id="g1"/>
+    
+    <input type="button" value="liczby" onclick="cosiek1(g1.value)"/>
+    <input type="button" value="slowa" onclick="cosiek2(g1.value)"/>
+  
+  <script>
+    function cosiek1(a) {
+      const grup=[];
+      for(i=0;i<a;i++){
+      grup[i] = prompt();
+    }
+    a1=0; a2=0;
+    for(i=0;i<grup.length;i++){
+if(grup[i]>a1){a2=a1; a1=grup[i]} else{if(grup[i]>a2&&grup[i]!=a1){a2=grup[i]}}
+    }
+    alert("druga najwieksza liczba= " +a2)
+  }
+  function cosiek2(a) {
+      const grup=[];
+      for(i=0;i<a;i++){
+      grup[i] = prompt();
+    }
+    a1=""; a2="";
+    for(i=0;i<grup.length;i++){
+if(grup[i].length>a1.length){a2=a1; a1=grup[i]} else{if(grup[i].length>a2.length&&grup[i]!=a1){a2=grup[i]}}
+    }
+    alert("drugie najdluzsze slowo to= " +a2)
+  }
+    
+ </script>
+</body>
+
+
+</html>
