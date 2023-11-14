@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+
+
+    <input type="button" value="filtr" onclick="dodaj()"/>
+    <input type="button" value="filtr2" onclick="dodaj2()"/>
+    <input type="button" value="filtr3" onclick="dodaj3()"/>
+    <input type="button" value="filtr4" onclick="dodaj4()"/>
+    <input type="button" value="filtr5" onclick="dodaj5()"/>
+    <input type="button" value="filtr6" onclick="dodaj6()"/>
+   
+   
+  <script>
+    const arr1 = ["Anna", "Maria"];
+const arr2 = ["Adam", "Marek", "Bartek", "Tomek"];
+const numbers = [1, 2, 3, 4, 5];
+    function dodaj(){
+        
+        console.log(find(arr1, arr2));}
+    function dodaj2(){
+        
+        console.log(find2(arr1));}
+        function dodaj3(){
+        
+        console.log(find3(arr2));}
+        function dodaj4(){
+        
+        console.log(find4);}
+        function dodaj5(){
+        
+        console.log(find5);}
+        function dodaj6(){
+        
+        console.log(find6(numbers));}
+       
+    
+
+
+
+
+const find = (arr, arrb) => arr.concat(arrb);
+const find2 = (arr) => arr.reverse();
+const find3 = (arr) => arr.filter(name => name.length <= 5 && name.endsWith('ek'));
+const find4 = numbers.reduce((total, num) => (total+num));
+const find5 = numbers.map((number) => (number*number+3));
+const find6 = (arr) => arr.filter(name => name%2 == 0 );
+
+
+    
+    </script>
+</body>
+
+
+</html>
