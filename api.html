@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+   <input type="button" Value="wyswietl" onClick="displayPost(CIP)">
+   <input type="button" value="lewo" onClick="previousPost()">
+   <input type="button" value="prawo" onClick="nextPost()">
+   <div ID="bruh"> bruh</div>
+
+</body>
+<script>
+const apiUrl='https://jsonplaceholder.typicode.com/posts';
+let CIP=1;
+const displayPost = (postId)=>{
+    fetch(apiUrl).then(response=>response.json()).then(posts=>{
+        const filteredPost=posts.filter(post=>post.id===postId);
+        if(filteredPost.length>0){
+            const post=filteredPost[0];
+           var bruhh= document.getElementById("bruh");
+           bruhh.innerHTML="ID:"+ post.id+"Title:"+post.title+"Body:"+post.body;
+           
+        }
+    })
+}
+const nextPost = ()=>{if(CIP<100){CIP++;}}
+const previousPost = ()=>{if(CIP>1){CIP--;}}
+</script>
+</html>
