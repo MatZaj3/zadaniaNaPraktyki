@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+</head>
+
+
+
+    <input type="button" value="filtr" onclick="dodaj()"/>
+    <input type="button" value="filtr2" onclick="dodaj2()"/>
+    <input type="button" value="filtr3" onclick="dodaj3()"/>
+ 
+   
+   
+  <script>
+    var bruh =0;
+    var bb="";
+    var ba=0;
+   const books = [
+    {title: 'Total loss 100', pages: 600, genre: 'fantasy', rating: 7},
+    {title: 'Total enlightenment', pages: 250, genre: 'romance', rating: 4},
+    {title: 'Big loss', pages: 400, genre: 'fantasy', rating: 2},
+    {title: 'Tenth Joy', pages: 32, genre: 'action', rating: 9},
+    {title: 'Quickfix number 4', pages: 15, genre: 'fantasy', rating: 8},
+    {title: 'World Ender 3', pages: 199, genre: 'fantasy', rating: 1},
+    {title: 'Paranormal', pages: 200, genre: 'thriller', rating: 5},
+];
+    function dodaj(){
+        
+        console.log(find(books));}
+
+    function dodaj2(){
+        
+        find2(books)
+        console.log(bruh);
+    bruh=0;}
+
+        function dodaj3(){
+            find3(books);
+        console.log(bb);
+    ba=0;}
+
+        
+       
+    
+
+
+
+
+
+const find2 = (arr) => arr.filter(book => book.pages%2 == 1 &&  /\d/.test(book.title)).map(book => book.rating>5 ? bruh++ : "");
+const find3 = (arr) => arr.map(book => book.title.length>bb.length ? bb=book.title : "");
+
+const find = (arr) => arr.filter(book => book.pages%2 == 0 && book.genre.charAt(book.genre.length-1)=="y").map(book => book.title.replace(/ /g, "").length);
+
+
+    
+    </script>
+</body>
+
+
+</html>
