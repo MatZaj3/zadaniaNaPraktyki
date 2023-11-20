@@ -14,7 +14,7 @@
    
    
   <script>
-    var bruh =0;
+   var bruh =0;
     var bb="";
     var ba=0;
    const books = [
@@ -43,17 +43,46 @@
 
         
        
-    
-
-
-
-
-
+const find = (arr) => arr.filter(book => book.pages%2 == 0 && book.genre.charAt(book.genre.length-1)=="y").map(book => book.title.replace(/ /g, "").length);
 const find2 = (arr) => arr.filter(book => book.pages%2 == 1 &&  /\d/.test(book.title)).map(book => book.rating>5 ? bruh++ : "");
 const find3 = (arr) => arr.map(book => book.title.length>bb.length ? bb=book.title : "");
 
-const find = (arr) => arr.filter(book => book.pages%2 == 0 && book.genre.charAt(book.genre.length-1)=="y").map(book => book.title.replace(/ /g, "").length);
 
+
+//dalej poprawa na "compose"
+
+
+
+const filterTitleStartsWithTotal = (list) => list.filter((book) => book.title.startsWith('Total'));
+const filterGenreIsFantasy = (list) => list.filter((book) => book.genre === 'fantasy');
+const filterPagesEven = (list) => list.filter((book) => book.pages%2==0);
+const filterGenreY = (list) => list.filter((book) => book.genre.charAt(book.genre.length-1)=="y");
+const filterPagesUneven = (list) => list.filter((book) => book.pages%2==1);
+const filterTitle1 = (list) => list.filter((book) => /\d/.test(book.title));
+const filterRating = (list) => list.filter((book) => book.rating>5 ? bruh++ : "");
+
+const filterBRUH = (list) => list.filter((book) =>book.title.length>bb.length ? bb=book.title : "");
+
+const mapToPages = (list) => list.map(({pages}) => pages)
+const sumPages = (book) => book.reduce((acc, newPage) => acc + newPage)
+const mapToTitle = (list) => list.map(({title}) => title.replace(/ /g, "").length)
+const sumTitle = (book) => book.reduce((acc, newPage) => acc + newPage)
+const mapToRating = (list) => list.map(({rating}) => rating)
+const sumRating = (book) => console.log(bruh)
+const ready= (book) => console.log(bb) 
+
+const compose = (...fns) => (x) => fns.reduceRight((acc, fn) => fn(acc), x)
+const compose2 = (...fns) => (x) => fns.reduce((acc, fn) => fn(acc), x)
+
+const getPagesWhereTitleIsTotal = compose(sumPages, mapToPages, filterTitleStartsWithTotal)
+const getPagesWhereTitleIsTotal2 = compose2(filterTitleStartsWithTotal, filterGenreIsFantasy, mapToPages, sumPages)
+const zad6comp = compose2(filterPagesEven,filterGenreY, mapToTitle, sumTitle)
+const zad7comp = compose2(filterPagesUneven,filterTitle1, filterRating, mapToRating, sumRating)
+const zad8comp = compose2(filterBRUH, ready)
+
+console.log(zad6comp(books))
+console.log(zad7comp(books))
+console.log(zad8comp(books))
 
     
     </script>
